@@ -1,4 +1,4 @@
-package sliding.window;
+package sliding.window.medium;
 
 import java.security.InvalidParameterException;
 import java.util.HashMap;
@@ -6,7 +6,7 @@ import java.util.Map;
 
 //leetcode version is premium
 //same as MaxFruitCountOf2types, just k = 2
-//line 24 has while loop in grokking
+//line 24 has while loop in case charAt[windowStart] has > 1 occurence
 public class LongestSubstringKDistinct {
 
     private static int longestSubstring(String str, int k) {
@@ -21,7 +21,7 @@ public class LongestSubstringKDistinct {
         for(int windowEnd = 0; windowEnd < str.length(); windowEnd++){
             char current = str.charAt(windowEnd);
             characterIntegerMap.put(current, characterIntegerMap.getOrDefault(current, 0) + 1);
-            if (characterIntegerMap.size() > k){
+            while (characterIntegerMap.size() > k){
                 char start = str.charAt(windowStart);
                 characterIntegerMap.put(start, characterIntegerMap.get(start) - 1);
                 if(characterIntegerMap.get(start) == 0)

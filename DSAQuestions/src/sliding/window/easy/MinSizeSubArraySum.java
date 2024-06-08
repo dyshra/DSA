@@ -1,11 +1,12 @@
-package sliding.window;
+package sliding.window.easy;
 
 //leetcode version is same
+//while loop -> in case arr[windowEnd] > arr[windowStart], might need to subtract more
 
 public class MinSizeSubArraySum {
 
     private static int getMinSize(int s, int[] arr){
-        //min size of array whose sum is  greater than equal to s
+        //min size of array whose sum is greater than equal to s
         int windowSum = 0;
         int windowStart = 0;
         int minSize = Integer.MAX_VALUE;

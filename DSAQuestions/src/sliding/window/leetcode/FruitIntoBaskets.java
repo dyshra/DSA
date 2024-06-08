@@ -3,6 +3,8 @@ package sliding.window.leetcode;
 import java.util.HashMap;
 import java.util.Map;
 
+//same version on grokking
+
 public class FruitIntoBaskets {
 
     private static int getMaxFruits(int[] fruits){
@@ -12,7 +14,7 @@ public class FruitIntoBaskets {
         for(int windowEnd = 0; windowEnd < fruits.length; windowEnd++){
             int fruit = fruits[windowEnd];
             map.put(fruit, map.getOrDefault(fruit, 0) + 1);
-            if(map.size() > 2){
+            while(map.size() > 2){
                 int startFruit = fruits[windowStart];
                 map.put(startFruit, map.get(startFruit) - 1);
                 if(map.get(startFruit) == 0)

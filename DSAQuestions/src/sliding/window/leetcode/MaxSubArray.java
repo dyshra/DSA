@@ -3,9 +3,8 @@ package sliding.window.leetcode;
 import java.util.Arrays;
 
 //No fixed size provided in this question
-//Kadane's algorithm
-//curr is max till i
-//max is max till now, while curr might get small later but max will keep record of max
+//Kadane's algorithm, we do currMaxTillIndex and maxOverall step to handle reduction of sum by negative integers
+//negative curr to handle all negative integers
 public class MaxSubArray {
     private static int max(int[] arr){
         int max = arr[0];
